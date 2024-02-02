@@ -1,0 +1,22 @@
+{
+  "name": "react-aksay",
+  "version": "1.0.0",
+  "description": "react app with aksay",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdrazuahammed1020/react-aksay.git"
+  },
+  "author": "razu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdrazuahammed1020/react-aksay/issues"
+  },
+  "homepage": "https://github.com/mdrazuahammed1020/react-aksay#readme",
+  "devDependencies": {
+    "parcel": "^2.11.0"
+  }
+}
