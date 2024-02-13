@@ -1,4 +1,4 @@
+@import './css/header.css';
+@import './css/mainlayout.css';
+@import './css/resturantcard.css';
 
-h1{
-    color: red;
-}
