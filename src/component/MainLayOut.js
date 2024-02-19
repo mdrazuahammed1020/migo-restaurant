@@ -1,16 +1,41 @@
-import {restaurantList} from "../../utils/configData"
+import { useEffect, useState } from "react";
 import ResturantCard from "./ResturantCard";
+import Shimmer from "./Shimmer";
 
 const MainLayOut = () => {
+    const [listOfRestaurants, setListOfRestaurants] = useState([]);
+
+    function filterRestaurant(){
+        let filterResList = listOfRestaurants.filter(res => res.info.avgRating > 4.3);
+        setListOfRestaurants(filterResList);
+    }
+
+    useEffect(()=> {
+        fetchData()
+    }, [])
+
+    const fetchData = async () => {
+        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+
+        const resData = await data.json();
+        setListOfRestaurants(resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    }
+
     
-    return (
+
+    return  listOfRestaurants.length === 0 ? 
+    (
+        <Shimmer />
+    )
+    :
+    (
         <div className="body-wrapper">
-            <div className="search-bar">
-                <input type="search" /> <button type="button">Search</button>
+            <div className="filter-wrapper">
+                <button onClick={filterRestaurant} type="filter-button">Top rated restaurant</button>
             </div>
             <div className="resturants-cards-container">
                 {
-                    restaurantList.map(resturant => <ResturantCard resturant={resturant} /> )
+                    listOfRestaurants.map(resturant => <ResturantCard key={resturant.info.id} resturant={resturant} /> )
                 }
             </div>
         </div>

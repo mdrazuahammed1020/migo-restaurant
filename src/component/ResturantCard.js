@@ -1,14 +1,15 @@
-    import { IMAGE_CDN_URL } from "../../utils/configData";
+import { IMAGE_CDN_URL } from "../../utils/constants";
+
     const ResturantCard = ({resturant}) => {
         const
             {name,
             cloudinaryImageId,
-            area,
+            locality,
             cuisines,
+            costForTwo,
             lastMileTravelString,
-            costForTwoString,
             avgRating,}
-            = resturant?.data;
+            = resturant?.info;
         return(
             <div className="res-card-wrapper">
             <div className="card">
@@ -19,9 +20,11 @@
             </p>
             </div>
             <small>{cuisines.join(", ")}</small> <br /> <br />
-            <p>           
+            <span>{locality}</span>
+            <p>{avgRating} ratings</p>            
+            <p>
             <small>{lastMileTravelString}</small>{" "}
-            <small>{costForTwoString}</small>
+            <span>{costForTwo}</span>
             </p>
             </div>
             </div>

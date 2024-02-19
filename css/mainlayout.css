@@ -1,20 +1,18 @@
 
-.search-bar{
-    padding: 20px 10px;
-    text-align: center;
-    /* border: 1px solid red; */
+.filter-wrapper{
+    margin: 30px 0;
 }
 
-.search-bar input, button{
+/* .search-bar input, button{
     outline: none;
     border: 1px solid #5f5f79;
     padding: 10px 20px;
     font-size: 18px;
-}
+} */
 
 .resturants-cards-container{
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 10px;
 }
