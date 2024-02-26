@@ -1,7 +1,7 @@
 {
-  "name": "react-aksay",
+  "name": "migo-restaurant",
   "version": "1.0.0",
-  "description": "react app with aksay",
+  "description": "react-app-restaurant",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mdrazuahammed1020/react-aksay.git"
+    "url": "git+https://github.com/mdrazuahammed1020/migo-restaurant.git"
   },
   "author": "razu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mdrazuahammed1020/react-aksay/issues"
+    "url": "https://github.com/mdrazuahammed1020/migo-restaurant/issues"
   },
-  "homepage": "https://github.com/mdrazuahammed1020/react-aksay#readme",
+  "homepage": "https://github.com/mdrazuahammed1020/migo-restaurant#readme",
   "devDependencies": {
     "parcel": "^2.11.0",
     "process": "^0.11.10"
