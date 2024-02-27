@@ -7,8 +7,8 @@ const MainLayOut = () => {
     const [filteredResList, setFilterResList] = useState([]);
     const [input, setInput] = useState('');
     function filterRestaurant(){
-        let filterResList = listOfRestaurants.filter(res => res.info.avgRating > 4.3);
-        setListOfRestaurants(filterResList);
+        let filterResList = listOfRestaurants.filter(res => res.info.avgRating >= 4.5);
+        setFilterResList(filterResList);
     }
 
     useEffect(()=> {
