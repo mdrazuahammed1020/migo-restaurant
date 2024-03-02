@@ -1,30 +1,18 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ResturantCard from "./ResturantCard";
 import Shimmer from "./Shimmer";
+import { searchFilter } from "../../utils/helper";
+import useRestaurants from "../../utils/useRestaurants";
+
 
 const MainLayOut = () => {
-    const [listOfRestaurants, setListOfRestaurants] = useState([]);
-    const [filteredResList, setFilterResList] = useState([]);
     const [input, setInput] = useState('');
+    const {listOfRestaurants, filteredResList, setFilterResList} = useRestaurants();
+
     function filterRestaurant(){
         let filterResList = listOfRestaurants.filter(res => res.info.avgRating >= 4.5);
         setFilterResList(filterResList);
     }
-
-    useEffect(()=> {
-        fetchData()
-    }, [])
-
-    const fetchData = async () => {
-        const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-
-        const resData = await data.json();
-        setListOfRestaurants(resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilterResList(resData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-
-    }
-
-    
 
     return  listOfRestaurants.length === 0 ? 
     (
@@ -38,7 +26,7 @@ const MainLayOut = () => {
                     <input type="text" value={input} onChange={(e)=> setInput(e.target.value)} /> 
                     <button onClick={()=> {
                         console.log(input);
-                        const filteredList = listOfRestaurants.filter(res => res.info.name.toLowerCase().includes(input.toLocaleLowerCase()));
+                        const filteredList = searchFilter(listOfRestaurants, input);
                         setFilterResList(filteredList);
                     }}>search</button>
                 </div>

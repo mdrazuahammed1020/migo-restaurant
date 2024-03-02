@@ -2,46 +2,15 @@
 const Shimmer = () => {
     return (
         <div className="shimmer-container">
-            <div className="shimmer-card">
+            {
+                Array(20)
+                .fill('')
+                .map((e, i) =>(
+                <div key={i} className="shimmer-card">
                 <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-            <div className="shimmer-card">
-                <div className="shimmer-card-img"></div>
-            </div>
-
+                </div>
+                ))
+            }
         </div>
     )
 }
