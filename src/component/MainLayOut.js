@@ -3,6 +3,7 @@ import ResturantCard from "./ResturantCard";
 import Shimmer from "./Shimmer";
 import { searchFilter } from "../../utils/helper";
 import useRestaurants from "../../utils/useRestaurants";
+import useOnline from "../../utils/useOnline";
 
 
 const MainLayOut = () => {
@@ -12,6 +13,12 @@ const MainLayOut = () => {
     function filterRestaurant(){
         let filterResList = listOfRestaurants.filter(res => res.info.avgRating >= 4.5);
         setFilterResList(filterResList);
+    }
+
+
+    const isOnline = useOnline();
+    if(!isOnline){
+        return <h2>Opps.seems you are offline!!!</h2>;
     }
 
     return  listOfRestaurants.length === 0 ? 
