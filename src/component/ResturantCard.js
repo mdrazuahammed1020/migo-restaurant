@@ -13,14 +13,18 @@ import { IMAGE_CDN_URL } from "../../utils/constants";
             lastMileTravelString,
             avgRating,}
             = resturant?.info;
+            console.log(resturant);
+            // console.log(IMAGE_CDN_URL);
         return(
             <div className="res-card-wrapper">
             <div className="card">
             <img src={IMAGE_CDN_URL + cloudinaryImageId} />
             <div className="ratings">
             <p>
+               
                 <strong>{name}</strong>
             </p>
+            <strong>No: {id}</strong>
             </div>
             <small>{cuisines.join(", ")}</small> <br /> <br />
             <span>{locality}</span>

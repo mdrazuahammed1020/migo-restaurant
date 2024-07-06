@@ -2,5 +2,5 @@ export const LOGO_URL = "https://camo.githubusercontent.com/c60e6d7513c3d1e22a41
 
 
 export const IMAGE_CDN_URL =
-  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+  'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/';
   

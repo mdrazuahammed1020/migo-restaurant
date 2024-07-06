@@ -1,0 +1,19 @@
+.restaurantmenu-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.restaurantmenu-wrapper img{
+    height: 400px;
+    margin-top: 50px;
+}
+
+.restaurantmenu-wrapper > h2:first-child{
+    font-size: 50px;
+}
+
+.offer-header{
+    color: red;
+    font-family: cursive;
+}
